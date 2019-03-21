@@ -2,8 +2,6 @@ import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { isPlatformBrowser } from '@angular/common';
-// import { AppConfig } from './app.config';
-
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +19,8 @@ export class GoogleAnaEventTrackService {
     public startGA(appConfigURL: any) {
 
         console.log("appConfigURL>>", appConfigURL);
-        
+        this._siteConfig = appConfigURL;
+
         this._router.events.subscribe((evt) => {
 
             if( evt instanceof NavigationEnd && isPlatformBrowser(this._platformId)) {

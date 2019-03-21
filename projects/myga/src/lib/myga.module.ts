@@ -4,14 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 import { GoogleAnaEventTrackService } from './myga.service';
-import { MygaComponent } from './myga.component';
-
-
 
 @NgModule({
-  declarations: [MygaComponent],
-  imports: [ CommonModule,HttpClientModule ],
+  declarations: [],
+  imports: [ CommonModule, HttpClientModule ],
   providers: [ Title, GoogleAnaEventTrackService],
-  exports: [MygaComponent]
+  exports: []
 })
 export class MygaModule { }
